@@ -1,0 +1,42 @@
+{
+  "introduction": {
+    "explanation": "Your name is John Berklendyer. Your family has grown up in New York, but you wish to flee factory work. You take your opportunity to escape destitude in New York City when the US Government announces the Homestead act in 1887. Now you are a farmer in Kansas, and you await your first season as a farmer.",
+    "effects": [
+      {
+        "item": "lima_beans",
+        "effect": "-1"
+      }
+    ]
+  },
+  "event_tornado": {
+    "explanation": "A tornado has ravaged the town of New Hamlet, and all the lighter crops like wheat and barley have been sucked away.",
+    "effects": [
+      {
+        "item": "wheat",
+        "effect": "-10"
+      },
+      {
+        "item": "barley",
+        "effect": "-10"
+      }
+    ]
+  },
+  "event_drought": {
+    "explanation": "The worst drought in the history of the town leaves everyone wanting more water. Most of your crops have failed, but the markets won't like that anyway.",
+    "effects": [
+      {
+        "item": "lima_beans",
+        "effect": "-10"
+      }
+    ]
+  },
+  "event_bad_winter": {
+    "explanation": "A tornado has ravaged the town of New Hamlet, and all the lighter crops like wheat and barley have been sucked away.",
+    "effects": [
+      {
+        "item": "lima_beans",
+        "effect": "-1"
+      }
+    ]
+  }
+}
