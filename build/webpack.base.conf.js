@@ -72,6 +72,28 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
+    ],
+    loaders: [
+      {
+        test: /\.ts$|\.tsx$/,
+        loader: 'ts-loader',
+        options: {
+          configFile: path.resolve(__dirname, 'tsconfig.json')
+        }
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue'
+      },
+      {
+        test: /\.s[a|c]ss$/,
+        loader: 'style!css!sass'
+      }
     ]
+  },
+  vue: {
+    loaders: {
+      scss: 'style!css!sass'
+    }
   }
 }
