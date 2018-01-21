@@ -1,0 +1,22 @@
+{
+  "lima_beans": {
+    "name": "Lima Beans",
+    "type": "CROP",
+    "description": "Just some good old fashioned lima beans."
+  },
+  "wheat": {
+    "name": "Wheat",
+    "type": "CROP",
+    "description": "Just some good old fashioned wheat."
+  },
+  "barley": {
+    "name": "Barley",
+    "type": "CROP",
+    "description": "Just some good old fashioned barley."
+  },
+  "corn": {
+    "name": "Corn",
+    "type": "CROP",
+    "description": "Just some good old fashioned corn."
+  }
+}
