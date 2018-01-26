@@ -1,54 +1,67 @@
 <template>
   <div id="app">
-    <header>
-      <span>Homestead</span>
-    </header>
+    <md-toolbar class="md-primary" v-if="gameInSession">
+      <span class="md-title">Homestead</span> 
+    </md-toolbar>
     <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
-      <router-view></router-view>
+      <start-screen id="startScreen" v-if="!gameInSession" @gameStart="startGame()" @showLeaderboard="showLeaderboard()">
+      </start-screen>
+      <game-leaderboard v-if="shouldShowLeaderboard">
+      </game-leaderboard>
+      <homestead-game v-if="gameInSession"></homestead-game>
     </main>
   </div>
 </template>
 
 <script>
+import StartScreen from '@/components/StartScreen'
+// import * as storage from '../scripts/storage'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: [
+    StartScreen
+  ],
+  computed: {
+    gameInSession () {
+      return false
+    },
+    dialogArributes () {
+    },
+    shouldShowLeaderboard () {
+      return true
+    }
+  },
+  methods: {
+    startGame () {
+      console.log('Starting game...')
+      // this.$route
+    },
+    showLeaderboard () {
+      console.log('Showing leaderboard...')
+    }
+  }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "~vue-material/dist/theme/engine";
+
+@include md-register-theme("default", (
+  primary: #D48D00,
+  accent: #7E7900,
+));
+
+@import "~vue-material/dist/theme/all";
+
 body {
   margin: 0;
-}
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  max-height: 100vh;
+  flex: 1 1 auto
 }
 
 main {
   text-align: center;
-  margin-top: 40px;
-}
-
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
-}
-
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
+  height: 100vh;
 }
 </style>
